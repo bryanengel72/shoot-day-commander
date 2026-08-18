@@ -1,0 +1,23 @@
+shoots/
+roster*.csv
+run-sheet*.md
+shoot-day*.md
+*.roster.csv
+
+!examples/
+!examples/*
+
+# LEARNINGS.md becomes client data after a real shoot.
+# Uncomment in a client clone:
+# LEARNINGS.md
+
+config.yml
+config.yaml
+
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+__pycache__/
+*.pyc
