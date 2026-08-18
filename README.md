@@ -97,7 +97,32 @@ You should end up with `SKILL.md` sitting directly inside the folder:
 
 Then quit Claude and open it again — it only looks for new skills at startup.
 
-### Step 3 — Check that it worked
+### Step 3 — Make it yours
+
+The skill ships with defaults, but two of them decide how your whole day runs.
+Once it is installed, ask Claude:
+
+> Set up Shoot Day Commander for my studio.
+
+It walks you through your name, your business name, and the two that matter:
+
+- **`per_person_minutes`** — how long you actually spend per person. Working
+  photographers land anywhere from 5 to 15 minutes, and this number sets the
+  length of the entire day. Give it your real pace, not an optimistic one.
+- **`selection_model`** — `on-site` if people pick their photo on the spot,
+  `gallery-after` if they choose later from a gallery. This decides whether you
+  spend the following week chasing forty people for selections.
+
+**To make it permanent:** answers you give in a conversation only last for that
+conversation. When you are happy with the settings, ask Claude to update the
+skill file and hand you back a new ZIP, then upload that one in place of the
+original (Path A), or drop the updated folder over the old one (Path B). Every
+future chat then already knows your studio.
+
+If you would rather edit it by hand, see [Setup](#setup) below — the values live
+in the `client` and `outreach` blocks at the top of `SKILL.md`.
+
+### Step 4 — Check that it worked
 
 Ask Claude:
 
