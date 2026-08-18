@@ -147,8 +147,26 @@ Ask Claude to do it:
 > Open the Shoot Day Commander SKILL.md and walk me through filling in my
 > studio details.
 
-Or open `SKILL.md` yourself in any text editor and fill in the `client` and
-`outreach` blocks at the top of the file. Two values matter more than the rest:
+Or open `SKILL.md` yourself in any text editor. The settings live in the
+frontmatter at the very top, nested under `metadata:` — the `client` and
+`outreach` blocks. Replace every `{{PLACEHOLDER}}` and flip `status` to
+`configured` when you are done:
+
+```yaml
+metadata:
+  client:
+    status: not yet configured          # -> configured
+    photographer: "{{PHOTOGRAPHER}}"
+    business_name: "{{BUSINESS_NAME}}"
+    per_person_minutes: 10
+    selection_model: "{{on-site | gallery-after}}"
+  outreach:
+    status: not yet configured          # -> configured
+    sender_name: "{{SENDER_NAME}}"
+    send_channel: draft-only
+```
+
+Two values matter more than the rest:
 
 - **`per_person_minutes`** decides the length of the entire day. Working
   photographers genuinely disagree on it, anywhere from 5 to 15 minutes.
@@ -156,7 +174,12 @@ Or open `SKILL.md` yourself in any text editor and fill in the `client` and
 - **`selection_model`** is either `on-site` or `gallery-after`, and it changes
   the whole post-shoot workflow. Under `on-site` there is nothing to chase.
 
-That is the whole setup. There is no database to build.
+Leave `send_channel: draft-only` as it is unless you have a specific reason to
+change it. Employee-facing mail goes to dozens of people at your client's
+company. The skill writes the draft and hands it to you; it never sends.
+
+The `storage` block is already configured and needs nothing from you. That is
+the whole setup. There is no database to build.
 
 ## How state works
 
