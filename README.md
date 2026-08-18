@@ -15,37 +15,54 @@ Markdown files the photographer owns.
 ## Install
 
 You do not need to know how to code, and you do not need to open a terminal.
-Downloading this is three clicks and a copy-paste.
 
-### Step 1 — Download the ZIP
+### Step 1 — Download the skill
 
-At the top of this page there is a big blue button that says **`<> Code`**.
+**[Download shoot-day-commander.zip](https://github.com/bryanengel72/shoot-day-commander/releases/latest/download/shoot-day-commander.zip)** — one file, about 34 KB.
 
-1. Click **`<> Code`**.
-2. In the little menu that drops down, click **Download ZIP** (it is the last
-   item, at the bottom).
-3. The file lands in your **Downloads** folder as
-   `shoot-day-commander-main.zip`.
+**Leave it zipped for now.** Do not double-click it yet. Which path you take
+next decides whether you unzip it at all.
 
-Do not click the green "Open with GitHub Desktop" or any of the `git` links.
-You want **Download ZIP** and nothing else.
+> Ignore the blue **`<> Code`** button at the top of this page. That gives you a
+> folder with `-main` stuck on the end of the name, which Claude will not find.
+> Use the download link above instead.
 
-### Step 2 — Unzip it and fix the folder name
+### Step 2 — Add it to Claude
 
-Double-click the ZIP. You get a folder called **`shoot-day-commander-main`**.
+Two ways. **Path A is easier.** Pick one, not both.
 
-Rename that folder to **`shoot-day-commander`** — delete the `-main` off the
-end. This matters. Claude looks for the folder by name.
+---
 
-### Step 3 — Drop it into your Claude skills folder
+#### Path A — Upload it (Claude web or desktop app)
 
-Claude keeps skills in a hidden folder called `.claude/skills` inside your home
-folder. Here is how to get there without a terminal.
+Nothing gets installed on your computer. Four clicks:
+
+1. In Claude, open **Customize → Skills**.
+2. Click **Add**.
+3. Choose **Upload a skill**.
+4. Pick the `shoot-day-commander.zip` you just downloaded — still zipped.
+
+It appears in your skills list with a switch beside it. Make sure the switch is
+on.
+
+**One setting to check first.** Skills need code execution turned on. Open
+**Settings → Capabilities** and switch on **Code execution and file creation**.
+Available on Free, Pro, Max, Team and Enterprise plans.
+
+---
+
+#### Path B — Drop the folder in (Claude Code)
+
+If you run Claude Code on your own machine, it reads skills from a folder
+instead.
+
+Double-click the ZIP to unzip it. You get a folder called
+**`shoot-day-commander`** — correctly named already, nothing to rename.
 
 **On a Mac**
 
 1. Open **Finder**.
-2. In the menu bar at the top, click **Go**, then **Go to Folder...**
+2. In the menu bar, click **Go**, then **Go to Folder...**
    (or press `Shift` + `Command` + `G`).
 3. Type this exactly and press Return:
 
@@ -55,9 +72,8 @@ folder. Here is how to get there without a terminal.
 
 4. Drag your `shoot-day-commander` folder into the window that opens.
 
-If step 3 says the folder does not exist, go to `~/.claude` instead, then make
-a new folder inside it named `skills` (all lowercase), and drag
-`shoot-day-commander` into that.
+If it says the folder does not exist, go to `~/.claude` instead, create a new
+folder inside it named `skills` (all lowercase), and drag the folder into that.
 
 **On Windows**
 
@@ -70,23 +86,20 @@ a new folder inside it named `skills` (all lowercase), and drag
 
 3. Drag your `shoot-day-commander` folder into the window that opens.
 
-If that folder does not exist, go to `%USERPROFILE%\.claude`, create a new
-folder named `skills`, and drag `shoot-day-commander` into that.
+If that folder does not exist, go to `%USERPROFILE%\.claude`, create a folder
+named `skills`, and drag `shoot-day-commander` into that.
 
-### Step 4 — Check that it worked
-
-You should end up with this, and the `SKILL.md` file needs to be sitting right
-inside `shoot-day-commander` — not one folder deeper:
+You should end up with `SKILL.md` sitting directly inside the folder:
 
 ```
 .claude/skills/shoot-day-commander/SKILL.md
 ```
 
-A common mix-up: unzipping sometimes gives you a folder inside a folder, so you
-get `shoot-day-commander/shoot-day-commander/SKILL.md`. If that happened, drag
-the inner folder out and delete the empty outer one.
+Then quit Claude and open it again — it only looks for new skills at startup.
 
-Now quit Claude and open it again. Ask it:
+### Step 3 — Check that it worked
+
+Ask Claude:
 
 > Do you have the Shoot Day Commander skill?
 
@@ -94,25 +107,30 @@ If it says yes, you are done.
 
 ### If it does not show up
 
-- **Check the folder name.** It has to be `shoot-day-commander` exactly, all
-  lowercase, with the hyphens. Not `shoot-day-commander-main`, not
-  `Shoot Day Commander`.
-- **Check for a folder inside a folder.** See Step 4 above.
-- **Restart Claude.** It only looks for new skills when it starts up.
+- **Path A:** check the switch beside the skill is on, and that **Code
+  execution and file creation** is enabled under Settings → Capabilities.
+- **Path A:** make sure you uploaded the ZIP itself, not a folder you unzipped.
+- **Path B:** the folder must be named `shoot-day-commander` exactly — all
+  lowercase, with the hyphens.
+- **Path B:** watch for a folder inside a folder. If you have
+  `shoot-day-commander/shoot-day-commander/SKILL.md`, drag the inner one out and
+  delete the empty outer one.
+- **Path B:** restart Claude. It only scans for new skills when it starts.
 
 ### Already comfortable with a terminal?
 
 ```bash
-git clone https://github.com/bryanengel72/shoot-day-commander.git
-cp -r shoot-day-commander ~/.claude/skills/
+git clone https://github.com/bryanengel72/shoot-day-commander.git \
+  ~/.claude/skills/shoot-day-commander
 ```
 
 ### What you need on your computer
 
-Python 3.8 or newer, and nothing else — no libraries to install, no accounts to
-create. Python is already on every Mac. On Windows, if Claude tells you Python
-is missing, get it from [python.org/downloads](https://www.python.org/downloads/)
-and tick **"Add Python to PATH"** on the first screen of the installer.
+Path A needs nothing at all. For Path B: Python 3.8 or newer, and nothing else
+— no libraries to install, no accounts to create. Python is already on every
+Mac. On Windows, if Claude tells you Python is missing, get it from
+[python.org/downloads](https://www.python.org/downloads/) and tick **"Add
+Python to PATH"** on the first screen of the installer.
 
 ## Try it in thirty seconds
 
