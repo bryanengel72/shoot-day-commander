@@ -1,17 +1,6 @@
 ---
 name: shoot-day-commander
-description: >
-  Reusable client template for a headshot or corporate photography business. Runs a corporate
-  team shoot day end to end: turns a roster, usually a plain-text list pasted from an email,
-  into a real time-slot schedule with setup, buffers and breaks, drafts the prep email and
-  48-hour reminders, produces the day-of run sheet and check-in list, then tracks who still
-  owes an image selection so nobody chases 40 people by hand. State lives in a CSV, no database
-  or connectors required. Approval gate before any employee-facing message goes out. Trigger on
-  "plan a shoot day", "build the schedule", "I have a roster", "here's the attendee list",
-  "corporate headshot day", "team shoot logistics", "run sheet", "prep email for the team",
-  "who hasn't picked their headshot", "chase selections", "who was a no-show", or "close out
-  the shoot". Always use this skill for the full plan-shoot-deliver workflow, do not freeform
-  it.
+description: "Runs a corporate headshot day end to end: turns a roster into a timed schedule, drafts prep emails and the run sheet, then chases image selections. Use for shoot day planning, rosters, run sheets."
 compatibility: >
   No connectors required. Python 3 (standard library only, no pip install) for the two bundled
   scripts. State lives in plain CSV and Markdown files the photographer owns. Gmail MCP is
